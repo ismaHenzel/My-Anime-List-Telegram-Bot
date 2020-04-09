@@ -4,6 +4,6 @@ The usability is very simple, you only need to call bot passing
    
 /anime_rank <rank_options> <total positions (default: 10) (limit: 50)>
 
-the rank options will be available as soon as the bot is finished, but if you enter in the file /services/filteringContent.js, there are all possible commands.
+the rank options will be available as soon as the bot is finished, but if you search in the file /services/filteringContent.js, there are all possible commands.
 
 ![usage example](/src/example.png)
