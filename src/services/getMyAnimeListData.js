@@ -26,8 +26,5 @@ function getMyAnimeListData(command){
     
 }
 
-getMyAnimeListData().then(values=>{
-    //console.log(values)
-});
 
 export default getMyAnimeListData;
