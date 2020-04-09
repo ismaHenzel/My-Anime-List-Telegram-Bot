@@ -7,7 +7,6 @@ const bot = new TelegramBot(token, {polling: true});
 
 bot.onText(/\/anime_rank (.+)/, async function (msg , match){
     const id = msg.chat.id;
-    
     let args = match[1].split(/[ ,]+/);
     let position = Number.isInteger(parseInt(args[1]))? parseInt(args[1]) : 10;
     
@@ -17,5 +16,6 @@ bot.onText(/\/anime_rank (.+)/, async function (msg , match){
     };
 
     let result = await cache(content)
-    return bot.sendMessage(id,result.slice(0, position+1).join("\n"));
+    let formatedResult = result.slice(0, position+1).join("\n")
+    return bot.sendMessage(id, formatedResult, {parse_mode: 'Markdown', disable_web_page_preview: true});
 })

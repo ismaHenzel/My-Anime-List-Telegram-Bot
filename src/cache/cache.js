@@ -18,12 +18,12 @@ export async function cache(keyName){
     });
 
     if(data){
-        console.log("INSIDE REDIS")
+       // console.log("INSIDE REDIS")
         return JSON.parse(data);
     };
     
     return await getMyAnimeListData(keyName).then(async value=>{
-        console.log("OUTSIDE REDIS");
+       // console.log("OUTSIDE REDIS");
         client.set(keyName, JSON.stringify(value), "EX", 21600)
         return value;
     });
